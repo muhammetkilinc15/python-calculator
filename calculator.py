@@ -26,6 +26,11 @@ def power(a: float, b: float) -> float:
         raise ValueError("Negative base requires an integer exponent")
     return a ** b
 
+def square_root(a: float) -> float:
+    if a < 0:
+        raise ValueError("Cannot take square root of a negative number")
+    return a ** 0.5
+
 
 OPERATIONS = {
     "1": ("Add", add),
@@ -33,6 +38,7 @@ OPERATIONS = {
     "3": ("Multiply", multiply),
     "4": ("Divide", divide),
     "5": ("Power", power),
+    "6": ("Square Root", square_root),
 }
 
 
@@ -55,7 +61,10 @@ def main() -> None:
 
         try:
             a = float(input("First number: "))
-            b = float(input("Second number: "))
+            if choice == "6":
+                b = None
+            else:
+                b = float(input("Second number: "))
         except ValueError:
             print("Please enter valid numbers.")
             continue
