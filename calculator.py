@@ -20,6 +20,10 @@ def divide(a: float, b: float) -> float:
 
 
 def power(a: float, b: float) -> float:
+    if a == 0 and b < 0:
+        raise ValueError("Zero cannot be raised to a negative power")
+    if a < 0 and not b.is_integer():
+        raise ValueError("Negative base requires an integer exponent")
     return a ** b
 
 
