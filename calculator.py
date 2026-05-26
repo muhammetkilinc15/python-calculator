@@ -19,11 +19,16 @@ def divide(a: float, b: float) -> float:
     return a / b
 
 
+def power(a: float, b: float) -> float:
+    return a ** b
+
+
 OPERATIONS = {
     "1": ("Add", add),
     "2": ("Subtract", subtract),
     "3": ("Multiply", multiply),
     "4": ("Divide", divide),
+    "5": ("Power", power),
 }
 
 
